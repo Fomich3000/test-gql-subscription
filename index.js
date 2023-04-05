@@ -24,7 +24,7 @@ const resolvers = {
     time: {
       subscribe: () => {
         const channel = Math.random().toString(36).substring(2, 15); // Random channel name
-        setInterval(() => pubsub.publish(channel, { time: new Date().toISOString() }), 1000); // Publish time updates every second
+        setInterval(() => pubsub.publish(channel, { time: new Date().toISOString() }), 5000); // Publish time updates every 5 second
         return pubsub.asyncIterator(channel);
       },
     },
